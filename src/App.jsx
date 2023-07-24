@@ -1,35 +1,55 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+
+import "./App.css";
+
+const moods = [
+  {
+    background: `clouds`,
+    danger: `low`,
+    message: `Please ping my emergency contact`,
+  },
+  {
+    background: `rain`,
+    danger: `meduim`,
+    message: `Come over`,
+  },
+  {
+    background: `thunder`,
+    danger: `high`,
+    message: `Please call the police`,
+  },
+  {
+    background: `sunny`,
+    danger: `low`,
+    message: ``,
+  },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [selectedMood, setSelectedMood] = useState(moods[0]);
+
+  function handleMoodShift() {
+    const moodIndex = moods.indexOf(selectedMood);
+
+    if (moodIndex < moods.length - 1) {
+      setSelectedMood(moods[moodIndex + 1]);
+    } else if (moodIndex === moods.length - 1) {
+      setSelectedMood(moods[0]);
+    }
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className={`card ${selectedMood.background}`}>
+        <button onClick={handleMoodShift}>Shift Mood</button>
+        <p>danger {selectedMood.danger}</p>
+        <p>bg {selectedMood.background}</p>
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
