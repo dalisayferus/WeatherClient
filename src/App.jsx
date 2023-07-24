@@ -1,54 +1,19 @@
-import { useState } from "react";
-
-import "./App.css";
-
-const moods = [
-  {
-    background: `clouds`,
-    danger: `low`,
-    message: `Please ping my emergency contact`,
-  },
-  {
-    background: `rain`,
-    danger: `meduim`,
-    message: `Come over`,
-  },
-  {
-    background: `thunder`,
-    danger: `high`,
-    message: `Please call the police`,
-  },
-  {
-    background: `sunny`,
-    danger: `low`,
-    message: ``,
-  },
-];
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Navbar from "./components/Navbar";
+// import Signup from "./pages/Signup";
+// import Login from "./pages/Login";
 
 function App() {
-  const [selectedMood, setSelectedMood] = useState(moods[0]);
-
-  function handleMoodShift() {
-    const moodIndex = moods.indexOf(selectedMood);
-
-    if (moodIndex < moods.length - 1) {
-      setSelectedMood(moods[moodIndex + 1]);
-    } else if (moodIndex === moods.length - 1) {
-      setSelectedMood(moods[0]);
-    }
-  }
-
   return (
-    <>
-      <div className={`card ${selectedMood.background}`}>
-        <button onClick={handleMoodShift}>Shift Mood</button>
-        <p>danger {selectedMood.danger}</p>
-        <p>bg {selectedMood.background}</p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="App">
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        {/* <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} /> */}
+      </Routes>
+    </div>
   );
 }
 
