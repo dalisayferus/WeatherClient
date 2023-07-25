@@ -18,7 +18,7 @@ function SignupPage(props) {
   const handlePassword = (e) => setPassword(e.target.value);
   const handleFirstname = (e) => setFirstname(e.target.value);
   const handleLastname = (e) => setLastname(e.target.value);
-  const handleAdminToggle = () => setIsAdmin(!isAdmin);
+  const handleAdminToggle = (e) => setIsAdmin(e.target.checked);
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
@@ -29,11 +29,13 @@ function SignupPage(props) {
         navigate("/login");
       })
       .catch((error) => {
+        console.log(error);
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
       });
   };
 
+  console.log(isAdmin);
   return (
     <div className="SignupPage">
       <h1>Sign Up</h1>
