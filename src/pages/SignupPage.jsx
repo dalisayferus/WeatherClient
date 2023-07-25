@@ -10,6 +10,7 @@ function SignupPage(props) {
   const [firstName, setFirstname] = useState("");
   const [lastName, setLastname] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const navigate = useNavigate();
 
@@ -17,10 +18,11 @@ function SignupPage(props) {
   const handlePassword = (e) => setPassword(e.target.value);
   const handleFirstname = (e) => setFirstname(e.target.value);
   const handleLastname = (e) => setLastname(e.target.value);
+  const handleAdminToggle = () => setIsAdmin(!isAdmin);
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { email, password, firstName, lastName };
+    const requestBody = { email, password, firstName, lastName, isAdmin };
     axios
       .post(`${API_URL}/auth/signup`, requestBody)
       .then((response) => {
@@ -63,6 +65,16 @@ function SignupPage(props) {
           value={lastName}
           onChange={handleLastname}
         />
+
+        <label>
+          <input
+            type="checkbox"
+            name="admin"
+            checked={isAdmin}
+            onChange={handleAdminToggle}
+          />
+          Register as Admin
+        </label>
 
         <button type="submit">Sign Up</button>
       </form>
