@@ -5,6 +5,7 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsAnon from "./components/isAnon";
 import { AuthProviderWrapper } from "./context/auth.context";
+import AlertsPage from "./pages/AlertsPage";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               </IsAnon>
             }
           />
+          <Route path="/alertspage" element={<AlertsPage />} />
         </Routes>
       </AuthProviderWrapper>
     </div>
