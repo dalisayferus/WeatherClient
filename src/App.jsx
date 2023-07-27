@@ -6,6 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import IsAnon from "./components/isAnon";
 import { AuthProviderWrapper } from "./context/auth.context";
 import AlertsPage from "./pages/AlertsPage";
+import "./App.css";
 
 function App() {
   return (

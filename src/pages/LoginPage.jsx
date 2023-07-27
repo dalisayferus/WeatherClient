@@ -6,6 +6,7 @@ import { AuthContext } from "../context/auth.context";
 const API_URL = "http://localhost:5005";
 
 function LoginPage(props) {
+  console.log(props);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
@@ -56,7 +57,7 @@ function LoginPage(props) {
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Don't have an account yet?</p>
+      <p> Do not have an account yet?</p>
       <Link to={"/signup"}> Sign Up</Link>
     </div>
   );
