@@ -41,6 +41,8 @@ const AlertPage = () => {
     }
   };
 
+  
+
   useEffect(() => {
     fetchAlerts();
   }, []);
