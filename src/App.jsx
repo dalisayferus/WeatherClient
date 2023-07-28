@@ -6,7 +6,13 @@ import LoginPage from "./pages/LoginPage";
 import IsAnon from "./components/isAnon";
 import { AuthProviderWrapper } from "./context/auth.context";
 import AlertsPage from "./pages/AlertsPage";
-import "./App.css";
+
+// 🎨 Importing styles
+import "./styles/alertPage.css";
+import "./styles/App.css";
+import "./styles/homePage.css";
+import "./styles/loginPage.css";
+import "./styles/signupPage.css";
 
 function App() {
   return (

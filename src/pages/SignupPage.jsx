@@ -70,6 +70,7 @@ function SignupPage(props) {
 
         <label>
           <input
+            className="checkbox"
             type="checkbox"
             name="admin"
             checked={isAdmin}

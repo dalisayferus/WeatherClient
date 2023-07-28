@@ -7,9 +7,8 @@ function Navbar() {
   const handleLogout = () => {
     logOutUser();
   };
-  console.log("user", user);
   return (
-    <nav>
+    <nav className="navbar">
       <Link to="/">
         <button>Home</button>
         {isLoggedIn && <button onClick={handleLogout}>Logout</button>}
