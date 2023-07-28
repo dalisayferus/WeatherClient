@@ -41,34 +41,33 @@ const AlertPage = () => {
     }
   };
 
-  
-
   useEffect(() => {
     fetchAlerts();
   }, []);
 
   return (
-    <div>
+    <>
       <h1>Alert Page</h1>
-
-      {alerts.map((alert) => (
-        <div key={alert._id}>
-          <h2>Danger Level: {alert.dangerLevel}</h2>
-          <p>Status: {alert.status}</p>
-          <p>Message: {alert.message}</p>
-          <button onClick={() => updateStatus(alert._id, "in process")}>
-            Processing...
-          </button>
-          <button onClick={() => updateStatus(alert._id, "completed")}>
-            Completed
-          </button>
-          <button onClick={() => deleteAlert(alert._id)}>Delete</button>
-          <p>Created at: {alert.createdAt}</p>
-          <p>Created by: {alert.createdBy[0]?.firstName}</p>
-          <hr />
-        </div>
-      ))}
-    </div>
+      <div className="alert-container">
+        {alerts.map((alert) => (
+          <div key={alert._id}>
+            <h2>Danger Level: {alert.dangerLevel}</h2>
+            <p>Status: {alert.status}</p>
+            <p>Message: {alert.message}</p>
+            <button onClick={() => updateStatus(alert._id, "in process")}>
+              Processing...
+            </button>
+            <button onClick={() => updateStatus(alert._id, "completed")}>
+              Completed
+            </button>
+            <button onClick={() => deleteAlert(alert._id)}>Delete</button>
+            <hr />
+            <p>Created at: {alert.createdAt}</p>
+            <p>Created by: {alert.createdBy[0]?.firstName}</p>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 

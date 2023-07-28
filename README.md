@@ -2,6 +2,14 @@
 
 Welcome to WeatherSafe, a unique weather application that goes beyond providing weather conditions in your city. WeatherSafe is designed with the primary goal of saving lives by allowing users to send emergency alerts to friends or authorities based on the weather conditions they select. Each weather state represents a different level of danger, and through this simple mechanism, you can quickly request assistance when you are in need.
 
+## Technologies Used
+
+WeatherSafe is built using the following technologies:
+
+- **Frontend:** React, Vanilla CSS
+- **Backend:** Node.js, Express, MongoDB
+- **Weather Data:** External weather API from [OpenWeatherMap](https:/OpenWeatherMap.org/)
+
 ## How It Works
 
 1. **Sign Up or Log In:** To access the life-saving features of WeatherSafe, users need to create an account or log in if they already have one.
