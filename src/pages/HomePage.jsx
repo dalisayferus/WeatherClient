@@ -143,11 +143,15 @@ function Homepage() {
           <p>background img: {selectedMood.background}</p>
         </div>
 
-        <button onClick={handleMoodShift}>Shift Mood</button>
-        <button onClick={handleSubmit}>Submit</button>
+        <button className="handleMoodShift" onClick={handleMoodShift}>
+          Change Theme
+        </button>
+        <button className="handleSubmit" onClick={handleSubmit}>
+          Submit
+        </button>
       </div>
 
-      <div className="container">
+      <div className="weather-container">
         <div className="search-box">
           <i className="fa-solid fa-location-dot"></i>
           <input
@@ -156,10 +160,7 @@ function Homepage() {
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
-          <button
-            className="fa-solid fa-magnifying-glass"
-            onClick={handleSearch}
-          ></button>
+          <button className="handleSearch" onClick={handleSearch}></button>
         </div>
 
         {error && (
@@ -171,7 +172,7 @@ function Homepage() {
 
         {weatherData && (
           <div className="weather-box">
-            <img src={weatherLogo} alt="Weather Icon" />
+            <img className="weatherLogo" src={weatherLogo} alt="Weather Icon" />
             <p className="temperature">
               {parseInt(weatherData.main.temp)}
               <span>°C</span>
