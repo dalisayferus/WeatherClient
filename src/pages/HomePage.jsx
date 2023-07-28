@@ -139,8 +139,8 @@ function Homepage() {
       <div className="Alerts">
         <div>
           {" "}
-          <p>danger level: {selectedMood.danger}</p>
-          <p>background img: {selectedMood.background}</p>
+          {/* <p>danger level: {selectedMood.danger}</p> */}
+          {/* <p>background img: {selectedMood.background}</p> */}
         </div>
 
         <button className="handleMoodShift" onClick={handleMoodShift}>

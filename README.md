@@ -6,7 +6,7 @@ Welcome to WeatherSafe, a unique weather application that goes beyond providing 
 
 WeatherSafe is built using the following technologies:
 
-- **Frontend:** React, Vanilla CSS
+- **Frontend:** HTML, CSS, React
 - **Backend:** Node.js, Express, MongoDB
 - **Weather Data:** External weather API from [OpenWeatherMap](https:/OpenWeatherMap.org/)
 

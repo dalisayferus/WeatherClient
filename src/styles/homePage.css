@@ -60,12 +60,14 @@
 .search-box i {
   color: #06283d;
   font-size: 28px;
+  
 }
 
 .weather-box {
   text-align: center;
   margin-top: 1rem;
   animation: fadeIn 0.5s ease-in-out;
+  background: #fff;
 }
 
 .weatherLogo {
@@ -96,10 +98,16 @@
   text-transform: capitalize;
 }
 
+.weather-details-container {
+  background-color: #fff;
+  padding: 20px;
+}
+
 .weather-details {
   display: flex;
   justify-content: space-between;
   margin-top: 30px;
+  background: #fff;
 }
 
 .humidity,

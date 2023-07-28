@@ -9,7 +9,7 @@ body {
   flex-direction: column; /* Modify to column */
   align-items: center; /* Add this line */
   justify-content: flex-start;
-  padding-top: 60px; /* Adjust this value to leave space for the navbar */
+  padding-top: 60px;
   background-color: #f5f5f5;
 }
 
